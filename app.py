@@ -10,7 +10,7 @@ def home():
 if __name__ == '__main__':
     # Commit to Git
     os.system("git add .")
-    os.system('git commit -m "At"')
+    os.system('git commit -m "ne"')
     os.system("git push -u origin main")
 
     try:
