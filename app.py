@@ -10,8 +10,9 @@ def home():
 if __name__ == '__main__':
     # Commit to Git
     os.system("git add .")
-    os.system('git commit -m "new changes "')
-    os.system("git push -u origin main")
+    os.system('git commit -m "new changes"')
+    os.system("git push -u origin main") 
+    
 
     try:
         app.run(debug=True, host='0.0.0.0', port=5000) 
