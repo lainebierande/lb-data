@@ -6,7 +6,7 @@ app = Flask(__name__)
 # Route that renders index.html
 @app.route('/')
 def home():
-    return render_template('index.html')  # render the index.html file
+    return render_template('index.html')  # render the index.html fil
 
 if __name__ == '__main__':
     # Commit to Git

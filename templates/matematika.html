@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Matemātika</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
     <h1>Matemātika</h1>
     <p>Šī ir matemātikas lapa.</p>
-    <a href="index.html">Atpakaļ uz sākumlapu</a>
+    <a href="{{ url_for('home') }}">Atpakaļ uz sākumlapu</a> <!-- Atgriešanās uz sākumlapu -->
 </body>
 </html>
