@@ -24,6 +24,8 @@ def angluvaloda():
 def dabaszinibas():
     return render_template('dabaszinibas.html')
 
+
+
 if __name__ == '__main__':
     # Commit to Git
     os.system("git add .")
