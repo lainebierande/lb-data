@@ -6,47 +6,102 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-image: url('https://source.unsplash.com/1600x900/?nature'); /* Nomaini uz savu attēlu, ja nepieciešams */
-    background-size: cover;
-    background-position: center;
+    background-color: black; /* Fona krāsa */
     color: white;
     display: flex;
-    justify-content: center;
-    align-items: center;
     height: 100vh;
-    text-align: center;
+}
+.back {
+    position: absolute; /* Pozicionēšana absolūti, lai novietotu augšējā kreisajā stūrī */
+    top: 20px; /* Attālums no augšas */
+    left: 20px; /* Attālums no kreisās malas */
+    font-size: 1.5em; /* Fonta izmērs */
+    color: rgb(220, 124, 200); /* Rozā krāsa */
+    text-decoration: none; /* Noņemts noklusējuma zemsvītra */
+    padding: 10px; /* Atstarpes ap tekstu */
+    transition: color 0.3s; /* Pāreja krāsai */
+    background-color: rgb(52, 49, 50);
+    transition: background-color 0.3s, box-shadow 0.3s, transform 0.1s;
 }
 
+.back:hover {
+    color: white; /* Tumšāka rozā krāsa uz hover */
+    
+}
+.back:active {
+    transform: translateY(14px); /* Poga tiek "iespiesta" uz leju */
+    box-shadow: 0 20px 10px rgba(237, 234, 234, 0.3); /* Samazināts ēnojums, kad poga tiek nospiesta */
+}
 .container {
-    background-color: rgba(0, 0, 0, 0.7); /* Pusstikls, lai teksts labāk redzams */
+    background-color: black; 
     padding: 20px;
     border-radius: 10px;
+    width: 50%; /* Konteineris aizņem 40% no lapas platuma */
+    display: flex;
+    flex-direction: column; /* Vertikāla izkārtojuma pogām */
+    justify-content: center; /* Vertikāla centrēšana */
+    justify-content: flex-start;
 }
 
+
 h1 {
-    font-size: 2.5em; /* Lielums uz datora */
+    font-size: 5.5em; /* Lielums uz datora */
+    margin-bottom: 40px;
+    text-align: center;
+    margin-top: 60px; /* Lielāka atstarpe zem uzraksta */
+    padding: 35px; /* Lielāka atstarpe ap pogām */
+    animation: colorChange 0.5s infinite;
+   
+}
+
+/* Krāsu maiņas animācija */
+@keyframes colorChange {
+    0% {
+        color: rgb(220, 124, 200); /* Sākuma krāsa */
+    }
+    50% {
+        color: white; /* Vidus krāsa */
+    }
+    100% {
+        color: rgb(220, 124, 200); /* Beigu krāsa */
+    }
 }
 
 .buttons {
+    display: flex; /* Izkārtojums pogām horizontāli */
+    flex-direction: column; /* Vertikāla izkārtojuma pogām */
     margin-top: 20px;
+    text-align: center;
 }
 
 .button {
-    display: inline-block;
-    background-color: #4CAF50; /* Zaļa krāsa */
-    color: white;
-    padding: 10px 20px;
-    margin: 10px;
+    display: block; /* Pogas aizņem visu platumu konteinerī */
+    background-color: rgb(220, 124, 200); /* Zaļa krāsa */
+    color: black;
+    padding: 35px; /* Lielāka atstarpe ap pogām */
+    margin: 30px 0; /* Vertikālas atstarpes */
     border: none;
-    border-radius: 5px;
+    border-radius: 15px;
     text-decoration: none;
-    font-size: 1.2em;
-    transition: background-color 0.3s;
+    font-size: 3.5em; /* Lielāks fonta izmērs */
+    transition: background-color 0.3s, box-shadow 0.3s, transform 0.1s; 
+    box-shadow: 0 18px 20px rgba(255, 555, 255, 0.5);
 }
 
 .button:hover {
-    background-color: #45a049; /* Tumšāka zaļa uz hover */
+    background-color: rgb(240, 169, 217);
 }
+.button:active {
+    transform: translateY(14px); /* Poga tiek "iespiesta" uz leju */
+    box-shadow: 0 20px 10px rgba(237, 234, 234, 0.3); /* Samazināts ēnojums, kad poga tiek nospiesta */
+}
+
+.image-container {
+    background-image: url('https://www.janisroze.lv/media/catalog/product/cache/4/image/650x/040ec09b1e35df139433887a97daa66f/9/7/9781915343338_56.jpg'); /* Nomaini uz savu attēlu, ja nepieciešams */
+    background-size: 70%; /* Attēls aizņem visu konteineru */
+    background-position: center; /* Attēls centrēts */
+    width: 50%; /* Attēla konteineris aizņem 60% no lapas platuma */
+    background-repeat: no-repeat;
 
 /* Responsive dizains */
 @media (max-width: 600px) {
@@ -55,7 +110,8 @@ h1 {
     }
 
     .button {
-        padding: 8px 16px;
-        font-size: 1em; /* Lielums mobilajām ierīcēm */
+        padding: 12px; /* Lielāka atstarpe mobilajām ierīcēm */
+        font-size: 1.2em; /* Lielums mobilajām ierīcēm */
     }
-}
+}}
+

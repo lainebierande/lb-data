@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angļu valoda</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='eng_1.css') }}">
+    <script src="{{ url_for('static', filename='eng_1.js') }}" defer></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            display: flex;
+        }
+
+        .left, .middle, .right {
+            flex: 1;
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .circle {
+            background-color: lightblue;
+            border-radius: 50%;
+            padding: 5px;
+        }
+
+        #notes, #answers {
+            display: none;
+        }
+
+        /* Stili pogām */
+        .button {
+            background-color: #ba009e; /* Zaļš fons */
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .back {
+            background-color: #ba009e; /* Zils fons */
+        }
+
+        .button:hover {
+            opacity: 0.8;
+        }
+
+        .input-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .input-container input {
+            flex: 1; /* Ievades lauks aizņem visu pieejamo platumu */
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-right: 10px; /* Attālums starp ievadi un pogām */
+        }
+    </style>
+</head>
+<body>
+    <h1>Angļu valoda</h1>
+    <a href="{{ url_for('angluvaloda.html') }}" class="button back">Atpakaļ</a>
+
+    <div class="container">
+        <div class="left">
+            <h2>Spēle: Ievieto pareizo darbības vārdu</h2>
+            <p>Izvēlieties pareizo darbības vārdu un ievietojiet to teikumā.</p>
+            <div id="game">
+                <div id="sentences"></div>
+                <button id="finishButton" class="button">Finish</button>
+                <div id="result"></div>
+            </div>
+        </div>
+
+        <div class="middle">
+            <h2>Špikeris</h2>
+            <div class="input-container">
+                <input type="password" id="spikerisPassword" placeholder="Ievadi paroli" />
+                <button id="showSpikerisButton" class="button">Rādīt</button>
+                <button id="hideSpikerisButton" class="button" style="display: none;">Paslēpt</button>
+            </div>
+
+            <div id="notes">
+                <div class="note">
+                    <div class="header-container">
+                        <div class="header"><b>PRESENT SIMPLE</b></div>
+                        <div class="circle">+ S</div>
+                    </div>
+                    <br>
+                    <p class="description"><b>Darbība, kuru veic vairākas reizes, bieži vai visu laiku.</b></p>
+                    <br>
+                    <p class="highlighted">USUALLY</p>
+                    <p class="highlighted">NEVER</p>
+                    <p class="highlighted">SOMETIMES</p>
+                    <p class="highlighted">EVERY</p>
+                    <p class="highlighted">ALWAYS</p>
+                    <p class="highlighted">RARELY</p>
+                    <p class="highlighted">NORMALLY</p>
+                    <p class="highlighted">OFTEN</p>
+
+                    <p class="centered-note">
+                        I <b>learn</b> every day.<br>
+                        He <b>learns</b> every day.<br>
+                        The bus <b>drives</b> from Purvciems to Center.
+                    </p>
+                </div>
+
+                <div class="note">
+                    <div class="header-container">
+                        <div class="header"><b>PRESENT CONTINUES</b></div>
+                        <div class="circle">+ ING</div>
+                    </div>
+                    <br>
+                    <p class="description"><b>Darbība, kuru veic tagad.</b></p>
+                    <br>
+                    <p class="highlighted">TODAY</p>
+                    <p class="highlighted">NOW</p>
+                    <p class="highlighted">AT THE MOMENT</p>
+                    <p class="highlighted">RIGHT NOW</p>
+
+                    <p class="centered-note">
+                        She <b>is having</b> a cup of tea right now.<br>
+                        I <b>am singing</b> BlackPink song at the moment.<br>
+                        We <b>are going</b> to dance school today.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="right">
+            <h2>Atbildes</h2>
+            <div class="input-container">
+                <input type="password" id="atbildesPassword" placeholder="Ievadi paroli" />
+                <button id="showAtbildesButton" class="button">Rādīt</button>
+                <button id="hideAtbildesButton" class="button" style="display: none;">Paslēpt</button>
+            </div>
+
+            <div id="answers">
+                <p>1. Atbilde: <span class="correct" style="color: green;">eat</span></p>
+                <p>2. Atbilde: <span class="correct" style="color: green;">goes</span></p>
+                <p>3. Atbilde: <span class="correct" style="color: green;">play</span></p>
+                <p>4. Atbilde: <span class="correct" style="color: green;">is reading</span></p>
+                <p>5. Atbilde: <span class="correct" style="color: green;">are watching</span></p>
+                <p>6. Atbilde: <span class="correct" style="color: green;">do</span></p>
+                <p>7. Atbilde: <span class="correct" style="color: green;">is sleeping</span></p>
+                <p>8. Atbilde: <span class="correct" style="color: green;">plays</span></p>
+                <p>9. Atbilde: <span class="correct" style="color: green;">study</span></p>
+                <p>10. Atbilde: <span class="correct" style="color: green;">is writing</span></p>
+                <p>11. Atbilde: <span class="correct" style="color: green;">goes</span></p>
+                <p>12. Atbilde: <span class="correct" style="color: green;">is playing</span></p>
+                <p>13. Atbilde: <span class="correct" style="color: green;">are traveling</span></p>
+                <p>14. Atbilde: <span class="correct" style="color: green;">meet</span></p>
+                <p>15. Atbilde: <span class="correct" style="color: green;">watch</span></p>
+                <p>16. Atbilde: <span class="correct" style="color: green;">never eats</span></p>
+                <p>17. Atbilde: <span class="correct" style="color: green;">is driving</span></p>
+                <p>18. Atbilde: <span class="correct" style="color: green;">usually go</span></p>
+                <p>19. Atbilde: <span class="correct" style="color: green;">play</span></p>
+                <p>20. Atbilde: <span class="correct" style="color: green;">is studying</span></p>
+                <p>21. Atbilde: <span class="correct" style="color: green;">is helping</span></p>
+                <p>22. Atbilde: <span class="correct" style="color: green;">always enjoy</span></p>
+                <p>23. Atbilde: <span class="correct" style="color: green;">are eating</span></p>
+                <p>24. Atbilde: <span class="correct" style="color: green;">are swimming</span></p>
+                <p>25. Atbilde: <span class="correct" style="color: green;">is running</span></p>
+                <p>26. Atbilde: <span class="correct" style="color: green;">are studying</span></p>
+                <p>27. Atbilde: <span class="correct" style="color: green;">does</span></p>
+                <p>28. Atbilde: <span class="correct" style="color: green;">is drinking</span></p>
+                <p>29. Atbilde: <span class="correct" style="color: green;">is doing</span></p>
+                <p>30. Atbilde: <span class="correct" style="color: green;">go</span></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Elementu atlasīšana
+        const spikerisPasswordInput = document.getElementById("spikerisPassword");
+        const showSpikerisButton = document.getElementById("showSpikerisButton");
+        const hideSpikerisButton = document.getElementById("hideSpikerisButton");
+        const notesContainer = document.getElementById("notes");
+
+        const atbildesPasswordInput = document.getElementById("atbildesPassword");
+        const showAtbildesButton = document.getElementById("showAtbildesButton");
+        const hideAtbildesButton = document.getElementById("hideAtbildesButton");
+        const answersContainer = document.getElementById("answers");
+
+        // Rāda špikera saturu
+        showSpikerisButton.addEventListener("click", () => {
+            const password = spikerisPasswordInput.value;
+            if (password === "paula") {
+                notesContainer.style.display = "block";
+                showSpikerisButton.style.display = "none";
+                hideSpikerisButton.style.display = "block";
+            } else {
+                alert("Nepareiza parole!");
+            }
+        });
+
+        // Paslēpj špikera saturu
+        hideSpikerisButton.addEventListener("click", () => {
+            notesContainer.style.display = "none";
+            showSpikerisButton.style.display = "block";
+            hideSpikerisButton.style.display = "none";
+        });
+
+        // Rāda atbilžu saturu
+        showAtbildesButton.addEventListener("click", () => {
+            const password = atbildesPasswordInput.value;
+            if (password === "paula") {
+                answersContainer.style.display = "block";
+                showAtbildesButton.style.display = "none";
+                hideAtbildesButton.style.display = "block";
+            } else {
+                alert("Nepareiza parole!");
+            }
+        });
+
+        // Paslēpj atbilžu saturu
+        hideAtbildesButton.addEventListener("click", () => {
+            answersContainer.style.display = "none";
+            showAtbildesButton.style.display = "block";
+            hideAtbildesButton.style.display = "none";
+        });
+    </script>
+</body>
+</html>

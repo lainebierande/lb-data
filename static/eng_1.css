@@ -1,0 +1,186 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgb(243, 182, 240); /* Fona krāsa */
+    color: black; /* Teksta krāsa mainīta uz melnu */
+    display: flex;
+    flex-direction: column; /* Mainīta orientācija, lai teksts būtu virsū */
+    height: 100vh; /* Iestatīts augstums pa visu ekrānu */
+}
+
+.back {
+    position: absolute; /* Pozicionēšana absolūti, lai novietotu augšējā kreisajā stūrī */
+    top: 20px; /* Attālums no augšas */
+    left: 20px; /* Attālums no kreisās malas */
+    font-size: 1.5em; /* Fonta izmērs */
+    color: rgb(220, 124, 200); /* Rozā krāsa */
+    text-decoration: none; /* Noņemts noklusējuma zemsvītra */
+    padding: 10px; /* Atstarpes ap tekstu */
+    transition: color 0.3s; /* Pāreja krāsai */
+    background-color: rgb(52, 49, 50);
+    border-radius: 5px; /* Noapaļoti stūri */
+}
+
+.back:hover {
+    color: white; /* Tumšāka rozā krāsa uz hover */
+}
+
+.back:active {
+    transform: translateY(4px); /* Poga tiek "iespiesta" uz leju */
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.3); /* Samazināts ēnojums, kad poga tiek nospiesta */
+}
+
+h1 {
+    font-size: 5.5em; /* Lielums uz datora */
+    color:rgb(211, 125, 204);
+    margin-bottom: 40px;
+    text-align: center;
+    margin-top: 60px; /* Lielāka atstarpe zem uzraksta */
+    padding: 35px; /* Lielāka atstarpe ap pogām */
+    background-color: black;
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.3); /* Samazināts ēnojums, kad poga tiek nospiesta */
+}
+   
+
+
+
+
+.container {
+    display: flex; /* Izmanto flexbox, lai sadalītu saturu */
+    flex: 1;
+    width: 100%; /* Platums 100% */
+    height: 100%; /* Augstums 100% */
+}
+
+.left, .middle, .right {
+    flex: 1; /* Katram blokam aizņemt vienādu platumu */
+    padding: 20px; /* Atstarpes ap saturu */
+    overflow-y: auto; /* Pārbauda pārsniedzējo saturu */
+}
+
+.left {
+    background: white; /* Balta fona krāsa kreisajā pusē */
+    border-radius: 8px 0 0 8px; /* Noapaļoti stūri kreisajā pusē */
+}
+
+.middle {
+    background: rgb(220, 220, 220); /* Pelēka fona krāsa vidējā daļā */
+}
+
+.right {
+    background: white; /* Balta fona krāsa labajā pusē */
+    border-radius: 0 8px 8px 0; /* Noapaļoti stūri labajā pusē */
+}
+
+.sentence {
+    margin: 15px 0;
+}
+
+input {
+    padding: 5px;
+    margin-left: 5px;
+}
+
+.correct {
+    color: green;
+    font-weight: bold;
+}
+
+.incorrect {
+    color: red;
+    font-weight: bold;
+}
+
+
+
+.note {
+    background-color: lightpink; /* Gaiši rozā fons */
+    border: 2px solid hotpink; /* Hot pink apmales */
+    border-radius: 8px; /* Noapaļoti stūri */
+    padding: 15px; /* Atstarpes ap saturu */
+    margin: 15px 0; /* Atstarpes starp logiem */
+}
+
+.header-container {
+    display: flex; /* Izmanto flexbox, lai izkārtotu elementus blakus */
+    align-items: center; /* Vertikāla centrēšana */
+}
+
+.header {
+    margin-right: 20px; /* Atstarpe starp virsrakstu un apli */
+    font-size: 24px; /* Virsraksta izmērs */
+    color: black; /* Virsraksta krāsa */
+}
+
+.circle {
+    width: 100px; /* Aplīša diametrs */
+    height: 80px; /* Aplīša diametrs */
+    background-color: white; /* Balts fons */
+    border: 5px solid red; /* Sarkana apmale ap apli */
+    border-radius: 50%; /* Noapaļoti stūri, lai izveidotu apli */
+    display: flex; /* Flexbox, lai centrētu tekstu */
+    align-items: center; /* Vertikāla centrēšana */
+    justify-content: center; /* Horizontāla centrēšana */
+    font-size: 26px; /* Teksta izmērs apli */
+    color: red; /* Teksta krāsa */
+    font-weight: bold; /* Trekns teksts */
+}
+.description {
+    color: black; /* Melna krāsa */
+}
+
+.highlighted {
+    color: black; /* Melna krāsa */
+    background-color: white; /* Balts fons */
+    font-weight: bold; /* Melni burti */
+    padding: 2px; /* Atstarpes ap vārdu */
+    border: 1px solid hotpink; /* Hot pink apmale */
+    border-radius: 5px; /* Noapaļoti stūri */
+    display: inline-block; /* Iespējot kolonnu izkārtojumu */
+    margin: 5px; /* Atstarpes starp vārdiem */
+    box-sizing: border-box; /* Iekļaut padding un border apmērā */
+}
+
+.highlight-container {
+    display: flex; /* Flexbox, lai izveidotu kolonnu izkārtojumu */
+    flex-wrap: wrap; /* Atļaut vārdiem iet uz nākamo rindu */
+}
+
+.centered-note {
+    text-align: left; /* Centrēts teksts */
+    background-color: white; /* Balts fons */
+    padding: 10px; /* Atstarpes ap saturu */
+    border: 2px solid black; /* Melna apmale */
+    border-radius: 5px; /* Noapaļoti stūri */
+    margin: 10px 0; /* Atstarpes starp logiem */
+}
+
+.highlight {
+    font-weight: bold; /* Izcelti vārdi */
+    text-decoration: underline; /* Pasvītroti */
+}
+/* Responsive dizains */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 1.5em; /* Lielums mobilajām ierīcēm */
+    }
+
+    .back {
+        font-size: 1em; /* Mazāks fonta izmērs mobilajām ierīcēm */
+    }
+
+    .container {
+        flex-direction: column; /* Kolonnas orientācija mobilajām ierīcēm */
+        height: auto; /* Augstums automātisks */
+    }
+
+    .left, .middle, .right {
+        flex: none; /* Atceļam flex efektu */
+        width: 100%; /* Platums 100% */
+    }
+}
