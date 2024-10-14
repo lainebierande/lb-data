@@ -8,13 +8,7 @@ app = Flask(__name__)
 def home():
     return render_template('index.html')
 
-@app.route('/matematika')
-def matemātika():
-    return render_template('matematika.html')
 
-@app.route('/latviesuvaloda')
-def latviesuvaloda():
-    return render_template('latviesuvaloda.html')
 
 @app.route('/angluvaloda')
 def angluvaloda():
