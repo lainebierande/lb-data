@@ -20,9 +20,6 @@ def latviesuvaloda():
 def angluvaloda():
     return render_template('angluvaloda.html')
 
-@app.route('/dabaszinibas')
-def dabaszinibas():
-    return render_template('dabaszinibas.html')
 
 @app.route('/eng_1')
 def eng_1():
