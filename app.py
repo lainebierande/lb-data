@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return "Hello, World! This is my website."
+    return "Hello, Paula!"
 
 if __name__ == '__main__':
     # Commit to Git
