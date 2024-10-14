@@ -13,7 +13,6 @@ def home():
 def angluvaloda():
     return render_template('angluvaloda.html')
 
-
 @app.route('/eng_1')
 def eng_1():
     return render_template('eng_1.html')
