@@ -9,7 +9,6 @@ def home():
     return render_template('index.html')
 
 
-
 @app.route('/angluvaloda')
 def angluvaloda():
     return render_template('angluvaloda.html')
