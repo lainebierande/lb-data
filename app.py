@@ -24,7 +24,9 @@ def angluvaloda():
 def dabaszinibas():
     return render_template('dabaszinibas.html')
 
-
+@app.route('/eng_1')
+def eng_1():
+    return render_template('eng_1.html')
 
 if __name__ == '__main__':
     # Commit to Git
